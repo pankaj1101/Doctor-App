@@ -1,7 +1,6 @@
+import 'package:doctorapp/screens/doctor_profile.dart';
 import 'package:doctorapp/screens/firstscreen.dart';
-import 'package:doctorapp/utils/screen_size.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -20,6 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           appBarTheme: AppBarTheme(
               backgroundColor: const Color(0xFFFAFAFA),
+              elevation: 0,
               iconTheme: const IconThemeData(color: Colors.black),
               titleTextStyle: TextStyle(
                   color: Colors.black,
@@ -28,131 +28,7 @@ class MyApp extends StatelessWidget {
           fontFamily: GoogleFonts.lato().fontFamily,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           primaryColor: Colors.deepPurple),
-      home: const MapContainer(),
-    );
-  }
-}
-
-class MyScreen extends StatefulWidget {
-  const MyScreen({super.key});
-
-  @override
-  State<MyScreen> createState() => _MyScreenState();
-}
-
-class _MyScreenState extends State<MyScreen> {
-  @override
-  Widget build(BuildContext context) {
-    var size = MediaQuery.sizeOf(context);
-    final bool isSmallScreen = size.width <= ScreenSize.kmobileSize;
-    final bool isMediumScreen = size.width > ScreenSize.kmobileSize &&
-        size.width <= ScreenSize.ktabletSize;
-    // final bool isLargeScreen = size.width > ScreenSize.ktabletSize;
-    // Doctor App
-
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text("Responsive Design", style: TextStyle(fontSize: 30)),
-            ),
-            Flexible(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: GridView.builder(
-                  shrinkWrap: true,
-                  itemCount: 6,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: (isSmallScreen)
-                          ? 2
-                          : (isMediumScreen)
-                              ? 4
-                              : 6,
-                      mainAxisExtent: (isSmallScreen)
-                          ? 80
-                          : (isMediumScreen)
-                              ? 150
-                              : 150),
-                  itemBuilder: (BuildContext context, int index) {
-                    return Card(
-                      child: (isSmallScreen)
-                          ? const ListTile(
-                              title: Text("Lenovo"),
-                              subtitle: Text("2099"),
-                              trailing: CircleAvatar(
-                                radius: 20,
-                                backgroundColor: Colors.red,
-                              ),
-                            )
-                          : (isMediumScreen)
-                              ? const GridTile(
-                                  child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    CircleAvatar(
-                                      radius: 20,
-                                      backgroundColor: Colors.red,
-                                    ),
-                                    Text("Lenovo"),
-                                    Text("2099"),
-                                  ],
-                                ))
-                              : const GridTile(
-                                  child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    CircleAvatar(
-                                      radius: 30,
-                                      backgroundColor: Colors.red,
-                                    ),
-                                    Text("Lenovo"),
-                                    Text("2099"),
-                                  ],
-                                )),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class MapContainer extends StatefulWidget {
-  const MapContainer({super.key});
-
-  @override
-  State<MapContainer> createState() => _MapContainerState();
-}
-
-class _MapContainerState extends State<MapContainer> {
-  late MapController mapController;
-
-  @override
-  void initState() {
-    mapController = MapController(
-        initPosition: GeoPoint(
-            latitude: 19.426517584110133, longitude: 72.83867626840275));
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: SizedBox(
-        width: 400,
-        height: 500,
-        child:
-            OSMFlutter(controller: mapController, initZoom: 12, stepZoom: 1.0),
-      ),
+      home: const MyHomePage(),
     );
   }
 }

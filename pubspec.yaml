@@ -15,7 +15,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^5.1.0
   flutter_slidable: ^3.0.0
-  flutter_osm_plugin: ^0.55.3
+  flutter_chat_ui: ^1.6.9
+  date_picker_timeline: ^1.2.5
+ 
+
   
 
 dev_dependencies:

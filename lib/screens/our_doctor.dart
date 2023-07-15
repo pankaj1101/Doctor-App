@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:doctorapp/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -37,7 +37,6 @@ class _OurDoctorState extends State<OurDoctor> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Our Doctors"),
-        elevation: 0,
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 10.0),
@@ -59,14 +58,7 @@ class _OurDoctorState extends State<OurDoctor> {
                     "Nearby Doctors",
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const OurDoctor()));
-                      },
-                      child: const Text("See all")),
+                  TextButton(onPressed: () {}, child: const Text("See all")),
                 ],
               ),
             ),
@@ -85,71 +77,78 @@ class NearbyDoctorList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      itemCount: DoctorModel.details.length,
-      itemBuilder: (BuildContext context, index) {
-        final doctor = DoctorModel.details[index];
-        return Slidable(
-          // actionPane: SlidableDrawerActionPane(),
-
-          endActionPane: ActionPane(
-            extentRatio: 0.25,
-            motion: const BehindMotion(),
-            children: [
-              SlidableAction(
-                onPressed: (context) {
-                  print(doctor.name);
-                },
-                backgroundColor: Colors.deepPurple,
-                foregroundColor: Colors.white,
-                icon: Icons.message_outlined,
-              ),
-            ],
-          ),
-          child: Card(
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage(doctor.imagePath),
-                  backgroundColor: Colors.grey[400],
-                  radius: 25,
-                ),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+    return DoctorModel.details.isNotEmpty
+        ? ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            itemCount: DoctorModel.details.length,
+            itemBuilder: (BuildContext context, index) {
+              final doctor = DoctorModel.details[index];
+              return Slidable(
+                closeOnScroll: true,
+                endActionPane: ActionPane(
+                  extentRatio: 0.25,
+                  motion: const BehindMotion(),
                   children: [
-                    Text(
-                      doctor.name,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      doctor.specialist,
-                      style: const TextStyle(fontWeight: FontWeight.normal),
-                    ),
-                    Row(
-                      children: List.generate(5, (index) {
-                        if (index < doctor.ratingCount) {
-                          return const Icon(Icons.star, color: Colors.yellow);
-                        } else {
-                          return const Icon(Icons.star_border,
-                              color: Colors.yellow);
-                        }
-                      }),
+                    SlidableAction(
+                      onPressed: (context) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    ChatScreen(doctorName: doctor.name)));
+                      },
+                      backgroundColor: Colors.deepPurple,
+                      foregroundColor: Colors.white,
+                      icon: Icons.message_outlined,
                     ),
                   ],
                 ),
-              ),
-            ),
-          ),
-        );
-      },
-    );
+                child: Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: AssetImage(doctor.imagePath),
+                        backgroundColor: Colors.grey[400],
+                        radius: 25,
+                      ),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            doctor.name,
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            doctor.specialist,
+                            style:
+                                const TextStyle(fontWeight: FontWeight.normal),
+                          ),
+                          Row(
+                            children: List.generate(5, (index) {
+                              if (index < doctor.ratingCount) {
+                                return const Icon(Icons.star,
+                                    color: Colors.yellow);
+                              } else {
+                                return const Icon(Icons.star_border,
+                                    color: Colors.yellow);
+                              }
+                            }),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            },
+          )
+        : const Center(child: CircularProgressIndicator());
   }
 }
 
