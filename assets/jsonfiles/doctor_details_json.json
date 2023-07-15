@@ -1,0 +1,39 @@
+{
+    "doctorList": [
+        {
+            "id": 1,
+            "name": "Dr. John Doe",
+            "specialist": "Heart Break Specialist",
+            "imagePath": "assets/HomeIcon/mens_doctor.png",
+            "ratingCount": 4
+        },
+        {
+            "id": 2,
+            "name": "Dr. Jane Smith",
+            "specialist": "Dermatologist",
+            "imagePath": "assets/HomeIcon/mens_doctor2.png",
+            "ratingCount": 5
+        },
+        {
+            "id": 3,
+            "name": "Dr. Stanley Johnson",
+            "specialist": "Cardiologist",
+            "imagePath": "assets/HomeIcon/female_doctor2.png",
+            "ratingCount": 3
+        },
+        {
+            "id": 4,
+            "name": "Dr. John Doe",
+            "specialist": "Heart Break Specialist",
+            "imagePath": "assets/HomeIcon/mens_doctor.png",
+            "ratingCount": 4
+        },
+        {
+            "id": 5,
+            "name": "Dr. Jane Smith",
+            "specialist": "Dermatologist",
+            "imagePath": "assets/HomeIcon/mens_doctor2.png",
+            "ratingCount": 5
+        }
+    ]
+}
