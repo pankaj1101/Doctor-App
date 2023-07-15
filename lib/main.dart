@@ -1,6 +1,7 @@
 import 'package:doctorapp/screens/firstscreen.dart';
 import 'package:doctorapp/utils/screen_size.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
           fontFamily: GoogleFonts.lato().fontFamily,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           primaryColor: Colors.deepPurple),
-      home: const MyHomePage(),
+      home: const MapContainer(),
     );
   }
 }
@@ -119,6 +120,38 @@ class _MyScreenState extends State<MyScreen> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class MapContainer extends StatefulWidget {
+  const MapContainer({super.key});
+
+  @override
+  State<MapContainer> createState() => _MapContainerState();
+}
+
+class _MapContainerState extends State<MapContainer> {
+  late MapController mapController;
+
+  @override
+  void initState() {
+    mapController = MapController(
+        initPosition: GeoPoint(
+            latitude: 19.426517584110133, longitude: 72.83867626840275));
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: SizedBox(
+        width: 400,
+        height: 500,
+        child:
+            OSMFlutter(controller: mapController, initZoom: 12, stepZoom: 1.0),
       ),
     );
   }

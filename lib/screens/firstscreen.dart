@@ -1,3 +1,4 @@
+import 'package:doctorapp/config/images.dart';
 import 'package:flutter/material.dart';
 import 'homescreen.dart';
 
@@ -11,9 +12,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: Stack(children: [
-        Image.asset("assets/images/background.png",
+        Image.asset(AppImages.backgroundImage,
             fit: BoxFit.cover, height: MediaQuery.sizeOf(context).height),
         const Positioned(
           top: 60,
@@ -37,8 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
           bottom: 0,
           right: -10,
           child: Image.asset(
-            "assets/images/doctor.png",
-            width: 400,
+            AppImages.femaleDoctorImage,
+            width: size.width * 0.8,
           ),
         ),
         Positioned(
