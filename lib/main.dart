@@ -42,12 +42,12 @@ class MyScreen extends StatefulWidget {
 class _MyScreenState extends State<MyScreen> {
   @override
   Widget build(BuildContext context) {
-    
     var size = MediaQuery.sizeOf(context);
     final bool isSmallScreen = size.width <= ScreenSize.kmobileSize;
     final bool isMediumScreen = size.width > ScreenSize.kmobileSize &&
         size.width <= ScreenSize.ktabletSize;
-    final bool isLargeScreen = size.width > ScreenSize.ktabletSize;
+    // final bool isLargeScreen = size.width > ScreenSize.ktabletSize;
+    // Doctor App
 
     return Scaffold(
       body: SafeArea(
