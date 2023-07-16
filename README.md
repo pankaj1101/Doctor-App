@@ -1,16 +1,9 @@
 # doctorapp
 
-A new Flutter project.
+Myself Pankaj Ram
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is created in Flutter using Dart.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I have designed and developed a doctor appointment app using #Flutter, a cross-platform framework. The app allows users to easily find nearby doctors and book #appointments for convenient healthcare access. With a user-friendly interface and advanced search filters, users can quickly discover doctors based on their specialty, location, and availability. The app also incorporates patient reviews and ratings to help users make informed decisions. It provides features such as appointment scheduling, reminders, and secure payment options for a seamless user experience. By leveraging technology, this app aims to improve healthcare accessibility and enhance the patient experience.
