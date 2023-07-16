@@ -17,21 +17,21 @@
         {
             "id": 3,
             "name": "Dr. Trisha Das",
-            "specialist": "Cardiologist",
+            "specialist": "Gynecologist",
             "imagePath": "assets/HomeIcon/female_doctor2.png",
             "ratingCount": 3
         },
         {
             "id": 4,
             "name": "Dr. Arvind Rana",
-            "specialist": "Heart Break Specialist",
+            "specialist": "Neurologist",
             "imagePath": "assets/HomeIcon/mens_doctor.png",
             "ratingCount": 4
         },
         {
             "id": 5,
             "name": "Dr. Kishan Gupta",
-            "specialist": "Dermatologist",
+            "specialist": "Psychiatrist",
             "imagePath": "assets/HomeIcon/mens_doctor2.png",
             "ratingCount": 5
         }
