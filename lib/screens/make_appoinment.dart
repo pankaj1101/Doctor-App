@@ -123,11 +123,11 @@ class _MakeAppoinmentState extends State<MakeAppoinment> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 10),
                           decoration: BoxDecoration(
-                              color: Colors.grey,
+                              color: Colors.grey.shade800,
                               border: Border.all(
                                   width: timeFormate == "AM" ? 2 : 1,
                                   color: timeFormate == "AM"
-                                      ? Colors.deepPurple
+                                      ? Colors.purple.shade300
                                       : Colors.white)),
                           child: const Text("AM",
                               style: TextStyle(color: Colors.white)),
@@ -144,11 +144,11 @@ class _MakeAppoinmentState extends State<MakeAppoinment> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 10),
                           decoration: BoxDecoration(
-                              color: Colors.grey,
+                              color: Colors.grey.shade800,
                               border: Border.all(
                                   width: timeFormate == "PM" ? 2 : 1,
                                   color: timeFormate == "PM"
-                                      ? Colors.purple
+                                      ? Colors.purple.shade300
                                       : Colors.white)),
                           child: const Text("PM",
                               style: TextStyle(color: Colors.white)),

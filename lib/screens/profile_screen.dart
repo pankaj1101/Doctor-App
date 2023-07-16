@@ -46,9 +46,13 @@ class _DoctorProfileState extends State<DoctorProfile> {
             style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25),
           ),
           const SizedBox(height: 20),
-          const Text(
-            "Chat doctor, visit hospitals, buy medicines, check the lab and update information about health all at Halodoc!",
-            style: TextStyle(fontSize: 20, color: Colors.grey),
+          const Padding(
+            padding: EdgeInsets.only(right: 16),
+            child: Text(
+              "Chat doctor, visit hospitals, buy medicines, check the lab and update information about health all at Halodoc!",
+              style: TextStyle(fontSize: 20, color: Colors.grey),
+              textAlign: TextAlign.justify,
+            ),
           ),
           const SizedBox(height: 20),
           const Text(
