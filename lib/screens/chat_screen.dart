@@ -1,12 +1,11 @@
+import 'package:doctorapp/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 
-import 'doctor_profile.dart';
-
 class ChatScreen extends StatefulWidget {
-  final String doctorName;
-  const ChatScreen({super.key, required this.doctorName});
+  final Map<String, dynamic> doctorDetailsMap;
+  const ChatScreen({super.key, required this.doctorDetailsMap});
 
   @override
   State<ChatScreen> createState() => _ChatStateScreen();
@@ -28,10 +27,10 @@ class _ChatStateScreen extends State<ChatScreen> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) =>
-                          DoctorProfile(doctorName: widget.doctorName)));
+                      builder: (context) => DoctorProfile(
+                          doctorDetailsMap: widget.doctorDetailsMap)));
             },
-            child: Text(widget.doctorName)),
+            child: Text(widget.doctorDetailsMap['name'])),
         centerTitle: true,
       ),
       body: Chat(

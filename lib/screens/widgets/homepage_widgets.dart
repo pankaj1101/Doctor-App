@@ -44,7 +44,7 @@ class CustomCard extends StatelessWidget {
                         ),
                         children: <TextSpan>[
                           TextSpan(
-                            text: 'Dr.Navido',
+                            text: 'Dr. Rahul Nair',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 18,
@@ -151,8 +151,6 @@ class Header extends StatelessWidget {
   }
 }
 
-
-
 class CustomMiniCard extends StatelessWidget {
   const CustomMiniCard({
     super.key,
@@ -209,4 +207,3 @@ class CustomMiniCardWithIconAndText extends StatelessWidget {
     );
   }
 }
-

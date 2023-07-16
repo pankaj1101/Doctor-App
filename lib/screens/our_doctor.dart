@@ -84,7 +84,8 @@ class NearbyDoctorList extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             itemCount: DoctorModel.details.length,
             itemBuilder: (BuildContext context, index) {
-              final doctor = DoctorModel.details[index];
+              Details doctor = DoctorModel.details[index];
+
               return Slidable(
                 closeOnScroll: true,
                 endActionPane: ActionPane(
@@ -96,8 +97,8 @@ class NearbyDoctorList extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    ChatScreen(doctorName: doctor.name)));
+                                builder: (context) => ChatScreen(
+                                    doctorDetailsMap: doctor.toMap())));
                       },
                       backgroundColor: Colors.deepPurple,
                       foregroundColor: Colors.white,

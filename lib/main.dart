@@ -1,4 +1,3 @@
-import 'package:doctorapp/screens/doctor_profile.dart';
 import 'package:doctorapp/screens/firstscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
