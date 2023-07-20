@@ -99,8 +99,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Text(
                             doctor.specialist,
-                            style:
-                                const TextStyle(fontWeight: FontWeight.normal),
+                            style: const TextStyle(
+                                fontWeight: FontWeight.normal),
                           ),
                           Row(
                             children: List.generate(5, (index) {

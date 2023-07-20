@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 
-class AppColors{ 
- // This file declares all the colors used in file.
+class AppColors {
+  static const Color primaryColor = Colors.deepPurple;
+  static const Color secondaryColor = Colors.purple;
 }

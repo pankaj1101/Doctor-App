@@ -19,6 +19,7 @@ dependencies:
   date_picker_timeline: ^1.2.5
   table_calendar: ^3.0.0
   numberpicker: ^2.1.2
+  date_time_picker_widget: ^2.0.0
 
 dev_dependencies:
   flutter_test:

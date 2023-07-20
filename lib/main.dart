@@ -1,6 +1,10 @@
+import 'package:doctorapp/config/colors.dart';
 import 'package:doctorapp/screens/firstscreen.dart';
+import 'package:doctorapp/screens/make_appoinment.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'screens/sample.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +30,8 @@ class MyApp extends StatelessWidget {
                   fontSize: 20,
                   fontFamily: GoogleFonts.lato().fontFamily)),
           fontFamily: GoogleFonts.lato().fontFamily,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.deepPurple, primary: AppColors.primaryColor),
           primaryColor: Colors.deepPurple),
       home: const MyHomePage(),
     );
